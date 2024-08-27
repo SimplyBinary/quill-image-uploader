@@ -22,7 +22,7 @@
         "webpack-dev-server": "^5.0.4"
     },
     "exports": {
-        ".": "./src/quill.imageUploader.js",
+        ".": "./src/dist.js",
         "./dist/quill.imageUploader.min.css": "./dist/quill.imageUploader.min.css",
         "./dist/quill.imageUploader.min.js": "./dist/quill.imageUploader.min.js"
     },
