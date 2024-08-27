@@ -45,11 +45,11 @@
     "repository": "https://github.com/SimplyBinary/quill-image-uploader.git",
     "scripts": {
         "build": "webpack --mode production",
-        "format": "prettier -w src/",
+        "format": "prettier -w demo/ src/",
         "lint": "eslint",
         "publish": "npm publish",
         "start": "webpack-dev-server --mode development",
-        "test": "prettier -c src/",
+        "test": "prettier -c demo/ src/",
         "watch": "webpack --watch --progress --mode production"
     },
     "version": "2.0.0"

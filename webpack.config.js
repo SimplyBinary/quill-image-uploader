@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 module.exports = [{
     entry: {
         "quill.imageUploader": "./src/dist.js",
-        demo: "./src/demo.js",
+        demo: "./demo/demo.js",
     },
     output: {
         filename: "[name].min.js",
