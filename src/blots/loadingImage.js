@@ -1,8 +1,8 @@
 import Quill from "quill";
 
-const Block = Quill.import("blots/block");
+const Embed = Quill.import("blots/embed");
 
-class LoadingImage extends Block {
+class LoadingImage extends Embed {
   static create(src) {
     const node = super.create(src);
     if (src === true) return node;
@@ -14,7 +14,7 @@ class LoadingImage extends Block {
   }
 }
 
-LoadingImage.blotName = "imageBlot";
+LoadingImage.blotName = "loading-image";
 LoadingImage.className = "image-uploading";
 LoadingImage.tagName = "span";
 
