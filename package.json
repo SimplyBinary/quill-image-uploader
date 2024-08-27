@@ -8,11 +8,13 @@
         "css-loader": "7.1.2",
         "eslint": "^8.57.0",
         "eslint-config-airbnb": "^19.0.4",
+        "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-import": "^2.29.1",
         "eslint-plugin-jsx-a11y": "^6.9.0",
         "eslint-plugin-react": "^7.35.0",
         "eslint-plugin-react-hooks": "^4.6.2",
         "mini-css-extract-plugin": "^2.9.1",
+        "prettier": "^3.3.3",
         "style-loader": "4.0.0",
         "terser-webpack-plugin": "^5.3.10",
         "webpack": "^5.94.0",
@@ -43,9 +45,11 @@
     "repository": "https://github.com/SimplyBinary/quill-image-uploader.git",
     "scripts": {
         "build": "webpack --mode production",
+        "format": "prettier -w src/",
         "lint": "eslint",
         "publish": "npm publish",
         "start": "webpack-dev-server --mode development",
+        "test": "prettier -c src/",
         "watch": "webpack --watch --progress --mode production"
     },
     "version": "2.0.0"
