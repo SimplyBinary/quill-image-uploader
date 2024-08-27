@@ -1,50 +1,52 @@
 {
-    "name": "quill-image-uploader",
-    "version": "1.3.0",
-    "repository": "https://github.com/noeloconnell/quill-image-uploader.git",
+    "author": "",
     "description": "A module for Quill rich text editor to allow images to be uploaded to a server instead of being base64 encoded",
-    "main": "src/quill.imageUploader.js",
-    "eslintConfig": {
-        "extends": "airbnb",
-        "env": {
-            "browser": true
-        }
+    "devDependencies": {
+        "@babel/core": "^7.25.2",
+        "@babel/preset-env": "^7.25.4",
+        "babel-loader": "^9.1.3",
+        "css-loader": "7.1.2",
+        "eslint": "^8.57.0",
+        "eslint-config-airbnb": "^19.0.4",
+        "eslint-plugin-import": "^2.29.1",
+        "eslint-plugin-jsx-a11y": "^6.9.0",
+        "eslint-plugin-react": "^7.35.0",
+        "eslint-plugin-react-hooks": "^4.6.2",
+        "mini-css-extract-plugin": "^2.9.1",
+        "style-loader": "4.0.0",
+        "terser-webpack-plugin": "^5.3.10",
+        "webpack": "^5.94.0",
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^5.0.4"
     },
-    "scripts": {
-        "watch": "webpack --watch --progress --mode production",
-        "start": "webpack-dev-server --mode development",
-        "build": "webpack --mode production",
-        "publish": "npm publish"
+    "exports": {
+        ".": "./src/quill.imageUploader.js",
+        "./dist/quill.imageUploader.min.css": "./dist/quill.imageUploader.min.css",
+        "./dist/quill.imageUploader.min.js": "./dist/quill.imageUploader.min.js"
     },
+    "files": [
+        "dist",
+        "src"
+    ],
     "keywords": [
         "quill",
         "quilljs",
         "image",
         "upload"
     ],
-    "author": "",
     "license": "MIT",
-    "devDependencies": {
-        "babel-core": "6.26.3",
-        "babel-loader": "7.1.5",
-        "babel-plugin-transform-object-assign": "6.22.0",
-        "babel-preset-env": "1.7.0",
-        "css-loader": "3.5.3",
-        "eslint": "6.8.0",
-        "eslint-config-airbnb": "18.1.0",
-        "eslint-config-airbnb-base": "14.1.0",
-        "eslint-plugin-import": "2.20.2",
-        "eslint-plugin-jsx-a11y": "6.2.3",
-        "eslint-plugin-react": "7.19.0",
-        "extract-text-webpack-plugin": "^4.0.0-beta.0",
-        "jshint": "2.11.0",
-        "style-loader": "0.19.1",
-        "terser-webpack-plugin": "2.3.6",
-        "webpack": "4.43.0",
-        "webpack-cli": "3.3.11",
-        "webpack-dev-server": "3.11.3"
-    },
+    "main": "src/quill.imageUploader.js",
+    "name": "quill-image-uploader",
     "peerDependencies": {
         "quill": "^2.0.0"
-    }
+    },
+    "repository": "https://github.com/SimplyBinary/quill-image-uploader.git",
+    "scripts": {
+        "build": "webpack --mode production",
+        "lint": "eslint",
+        "publish": "npm publish",
+        "start": "webpack-dev-server --mode development",
+        "watch": "webpack --watch --progress --mode production"
+    },
+    "version": "2.0.0"
 }

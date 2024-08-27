@@ -1,6 +1,6 @@
 const path = require("path");
 const TerserPlugin = require("terser-webpack-plugin");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = [{
     entry: {
@@ -12,7 +12,6 @@ module.exports = [{
         path: path.resolve(__dirname, "dist"),
     },
     devServer: {
-        //contentBase: './src',
         https: true,
     },
     externals: {
@@ -22,37 +21,36 @@ module.exports = [{
         minimize: true,
         minimizer: [
             new TerserPlugin({
-                extractComments: true,
-                cache: true,
+                // https://github.com/webpack-contrib/terser-webpack-plugin#terseroptions
                 parallel: true,
-                sourceMap: true, // Must be set to true if using source-maps in production
                 terserOptions: {
-                    // https://github.com/webpack-contrib/terser-webpack-plugin#terseroptions
-                    extractComments: "all",
-                    compress: {
-                        drop_console: false,
-                    },
-                },
+                    compress: true,
+                    sourceMap: true,
+                }
             }),
         ],
     },
     module: {
         rules: [{
-                test: /\.css$/,
-                use: ExtractTextPlugin.extract({
-                    use: [{
-                        loader: "css-loader",
-                    }, ],
-                }),
+                test: /\.css$/i,
+                use:  [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                ]
             },
             {
-                test: /\.js$/,
+                test: /\.m?js$/,
                 exclude: /node_modules/,
                 use: {
                     loader: "babel-loader",
-                },
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
             },
         ],
     },
-    plugins: [new ExtractTextPlugin("quill.imageUploader.min.css")],
+    plugins: [
+        new MiniCssExtractPlugin({ filename: '../dist/quill.imageUploader.min.css' }),
+    ],
 }, ];
